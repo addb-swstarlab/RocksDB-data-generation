@@ -7,6 +7,7 @@ from parsing import *
 from instance_index import *
 from benchmark_params import BenchmarkParams
 
+# Use argparser to get command options
 argparser = argparse.ArgumentParser(description="rocksdb dbbench test program")
 argparser.add_argument('--wk', required=True, default=0, type=int, help="which workload a user wants to test")
 argparser.add_argument('--mode', required=False, default=0, type=int, help="by config file option : 0  |  by random option : 1| by gen config option : 2")
@@ -22,6 +23,7 @@ BP = BenchmarkParams(args.wk)
 
 ###################################### 수 정 필 요 #############################################
 
+# Set value size for specific workload
 def set_value_size():
     key_size = 16
     value_size = int(BP.get_value_size())
@@ -31,6 +33,7 @@ def set_value_size():
     # print(data_option)
     return data_option, tmp_dict
 
+# Set benchmark type and options for specific workload
 def set_benchmark():
     benchmark = BP.get_benchmark() # "readrandomwriterandom"
     if benchmark == "readrandomwriterandom":
@@ -43,6 +46,7 @@ def set_benchmark():
 
 #################################################################################################
 
+# Execute db_bench by existed config files
 def execute_by_config(config_file : str, tmp_dir : str):
     
     command = BENCH_PATH + "/db_bench "
@@ -79,7 +83,7 @@ def execute_by_config(config_file : str, tmp_dir : str):
 
     return ex_results, in_results, option_dict
 
-
+# Execute db_bench by random config files
 def execute_by_random(index : int, tmp_dir : str):
 
     command = BENCH_PATH + "/db_bench "
@@ -120,6 +124,7 @@ def execute_by_random(index : int, tmp_dir : str):
 
     return ex_results, in_results, option_dict
 
+# Generate random RocksDB configurations
 def gen_config(number : int):
     for i in range(1,number+1):
         data_option, tmp_dict = set_value_size()
