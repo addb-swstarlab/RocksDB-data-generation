@@ -1,5 +1,6 @@
 import pandas as pd
 
+# Workload information for benchmark testing with different entry number, value size, benchmark type and benchmard options. 
 class BenchmarkParams():
     def __init__(self, wk_num):
         super(BenchmarkParams, self).__init__()
