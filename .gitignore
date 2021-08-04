@@ -1,0 +1,11 @@
+*.csv
+*.out
+*.sh
+*.out
+*.tar
+*.swp
+tmp_data/
+conf_tmp/
+rocksdb_conf/
+target_workload/
+__pycache__
