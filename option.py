@@ -1,6 +1,7 @@
 import random
 from configparser import ConfigParser
 
+# List for RocksDB parameters, external and internal metrics.
 KB = 1024
 MB = 1024 * 1024
 
@@ -42,6 +43,8 @@ outputs = [
 ]
 
 # Change parameter values from line 45 to line 88
+# RocksDB parameter for tuning
+# RocksDB basic parameters
 option = {
     "max_background_compactions": [i for i in range(1, 17)], # D:1, B:4 ~ 32
     "max_background_flushes": [i for i in range(1, 17)], #D:1, B:4~32
@@ -70,11 +73,13 @@ option = {
     "cache_index_and_filter_blocks": ["true", "false"] #D:false
 }
 
+# RocksDB additional parameters
 plus_option = {
     "memtable_bloom_size_ratio": [0, 0.05, 0.1, 0.15, 0.2], #D:0
     "compression_ratio": [i/100 for i in range(100)] #D:0.5, B:0.1 ~ 0.9
 }
 
+# RocksDB parameters for level compaction
 level_compaction_option = {
     "max_bytes_for_level_base": [s * MB for s in range(2, 9)], #D:256M, B:1M ~ 16M
     "max_bytes_for_level_multiplier": [i for i in range(8, 13)], #D:10, B:6 ~ 10
@@ -83,6 +88,7 @@ level_compaction_option = {
     "num_levels": [5, 6, 7, 8] #D:7, B:7
 }
 
+# RocksDB parameters for universal compaction
 universal_compaction_option = {
     "universal_max_size_amplification_percent": [],
     "universal_size_ratio ": [],
@@ -96,6 +102,7 @@ unknown_option = {
     "wal_bytes_per_sync": []
 }
 
+# Function for read config files
 def read_config_option(config_file : str):
     parser = ConfigParser()
     parser.read(config_file)
@@ -111,7 +118,7 @@ def read_config_option(config_file : str):
     return (option_list, option_dict)
 
     
-
+# Function for make random parameters
 def make_random_option():
     option_list = ""
     option_dict = {}
@@ -172,6 +179,7 @@ def make_random_option():
     
     return (option_list, option_dict)
 
+# Function that save parameters to ".cnf" file
 def save_option_as_cnf(data:dict, filename:str):
 
     config = ConfigParser()
