@@ -21,7 +21,7 @@ CONFIG_FILE_PATH = args.config_path
 BENCH_PATH = "/home/jieun/rocksdb"
 BP = BenchmarkParams(args.wk)
 
-###################################### 수 정 필 요 #############################################
+###################################### Need to fix #############################################
 
 # Set value size for specific workload
 def set_value_size():
