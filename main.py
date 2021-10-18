@@ -10,7 +10,7 @@ from benchmark_params import BenchmarkParams
 # Use argparser to get command options
 argparser = argparse.ArgumentParser(description="rocksdb dbbench test program")
 argparser.add_argument('--wk', required=True, default=0, type=int, help="which workload a user wants to test")
-argparser.add_argument('--mode', required=False, default=0, type=int, help="by config file option : 0  |  by random option : 1| by gen config option : 2")
+argparser.add_argument('--mode', required=False, default=0, type=int, help="by config file option : 0|  by random option : 1| by gen config option : 2")
 argparser.add_argument('--num', required=False, default=20, type=int, help="how many random option create and test")
 argparser.add_argument('--config_path', required=False, default="./conf_tmp/", type=str, help="config file path")
 
