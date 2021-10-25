@@ -75,7 +75,7 @@ def parsing_internal(input_file: str):
 
     parser = {}
 
-    # read
+    # Read
     data = []
     for l in range(len(lines)):
 
