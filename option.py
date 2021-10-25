@@ -127,7 +127,7 @@ def make_random_option():
     compaction_style = ""
     write_buffer_number = -1
 
-    # option
+    # Option
     for k, v in option.items():
 
         if k == "max_write_buffer_number":
