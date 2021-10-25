@@ -1,4 +1,4 @@
-#!/bin/bash
+# !/bin/bash
 
 cd /home/jieun/data_generation_rocksdb
 python main.py --wk $1
