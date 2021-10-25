@@ -31,7 +31,7 @@ def parsing_external(input_file: str):
             data["db_stat"] = lines[l:idx]
 
 
-    # parsing
+    # Parsing
     for line in data["db_stat"]:
         line = line.strip("\n")
         if "Uptime(secs)" in line:
