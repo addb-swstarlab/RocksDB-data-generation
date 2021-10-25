@@ -154,7 +154,7 @@ def make_random_option():
         option_dict[k] = value
     
     
-    # compaction option
+    # Compaction option
     if compaction_style == "kCompactionStyleLevel":
         for k, v in level_compaction_option.items():
             value = random.choice(v)
