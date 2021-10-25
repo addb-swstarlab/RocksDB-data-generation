@@ -15,7 +15,7 @@ def parsing_external(input_file: str):
         "GB" : 1024
     }
 
-    # read
+    # Read
     for l in range(len(lines)):
         if (
             "** Compaction Stats [default] **" in lines[l]
