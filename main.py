@@ -88,7 +88,7 @@ def execute_by_random(index : int, tmp_dir : str):
 
     command = BENCH_PATH + "/db_bench "
 
-    # set key value size 
+    # Set key value size 
     data_option, tmp_dict = set_value_size()
     tmp_dict.update({"index" : index})
     command += data_option
