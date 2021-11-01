@@ -93,7 +93,7 @@ def execute_by_random(index : int, tmp_dir : str):
     tmp_dict.update({"index" : index})
     command += data_option
 
-    # create random option
+    # Create random option
     option_list, option_dict = make_random_option()
     command += option_list
     option_dict.update(tmp_dict)
