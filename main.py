@@ -72,7 +72,7 @@ def execute_by_config(config_file : str, tmp_dir : str):
     redirection_command = f"> {bench_result}"
     command += redirection_command
     
-    # execute benchmark test
+    # Execute benchmark test
     os.system(command)
 
     # parsing
