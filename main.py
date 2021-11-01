@@ -61,7 +61,7 @@ def execute_by_config(config_file : str, tmp_dir : str):
     command += option_list
     option_dict.update(tmp_dict)
 
-    # benchmarks option
+    # Benchmarks option
     benchmark_option = set_benchmark()
     command += benchmark_option
 
