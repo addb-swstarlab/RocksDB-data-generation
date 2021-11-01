@@ -75,7 +75,7 @@ def execute_by_config(config_file : str, tmp_dir : str):
     # Execute benchmark test
     os.system(command)
 
-    # parsing
+    # Parsing
     ex_results = parsing_external(bench_result)
     ex_results.update({"index" : config_file})
     in_results = parsing_internal(bench_result)
