@@ -65,7 +65,7 @@ def execute_by_config(config_file : str, tmp_dir : str):
     benchmark_option = set_benchmark()
     command += benchmark_option
 
-    # bench result redirection
+    # Bench result redirection
     directory, file = os.path.split(config_file)
     bench_result = f"{file.rstrip('.cnf')}.txt"
     bench_result = os.path.join(tmp_dir, bench_result)
