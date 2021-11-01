@@ -51,7 +51,7 @@ def execute_by_config(config_file : str, tmp_dir : str):
     
     command = BENCH_PATH + "/db_bench "
 
-    # set key value size 
+    # Set key value size 
     data_option, tmp_dict = set_value_size()
     tmp_dict.update({"index" : config_file})
     command += data_option
