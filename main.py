@@ -56,7 +56,7 @@ def execute_by_config(config_file : str, tmp_dir : str):
     tmp_dict.update({"index" : config_file})
     command += data_option
 
-    # create random option
+    # Create random option
     option_list, option_dict = read_config_option(config_file)
     command += option_list
     option_dict.update(tmp_dict)
