@@ -130,7 +130,7 @@ def gen_config(number : int):
         data_option, tmp_dict = set_value_size()
         #tmp_dict.update({"index" : i})
 
-        # create random option
+        # Create random option
         option_list, option_dict = make_random_option()
         option_dict.update(tmp_dict)
 
