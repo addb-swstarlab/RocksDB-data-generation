@@ -116,7 +116,7 @@ def execute_by_random(index : int, tmp_dir : str):
     # Execute benchmark test
     os.system(command)
 
-    # parsing
+    # Parsing
     ex_results = parsing_external(bench_result)
     ex_results.update({"index" : index})
     in_results = parsing_internal(bench_result)
