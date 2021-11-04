@@ -107,7 +107,7 @@ def execute_by_random(index : int, tmp_dir : str):
     random_config_filename = os.path.join(CONFIG_FILE_PATH, random_config_filename)
     save_option_as_cnf(option_dict, random_config_filename)
 
-    # bench result redirection
+    # Bench result redirection
     bench_result = f"{str(index).zfill(6)}.txt"
     bench_result = os.path.join(tmp_dir, bench_result)
     redirection_command = f"> {bench_result}"
