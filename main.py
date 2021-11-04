@@ -113,7 +113,7 @@ def execute_by_random(index : int, tmp_dir : str):
     redirection_command = f"> {bench_result}"
     command += redirection_command
     
-    # execute benchmark test
+    # Execute benchmark test
     os.system(command)
 
     # parsing
