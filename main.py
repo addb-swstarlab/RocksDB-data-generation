@@ -144,7 +144,7 @@ def gen_config(number : int):
 
 if __name__ == "__main__":
 
-    # arguments parsing
+    # Arguments parsing
 
     # create directory for benchmark result data
     try:
