@@ -175,7 +175,7 @@ if __name__ == "__main__":
 
     
     if IS_RANDOM == 1:
-        # random option으로 실행
+        # Random option으로 실행
         for i in range(range_start, range_end):
             # execute bench
             ex_results, in_results, option_dict = execute_by_random(i, tmp_dir)
