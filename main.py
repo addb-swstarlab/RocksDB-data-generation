@@ -134,7 +134,7 @@ def gen_config(number : int):
         option_list, option_dict = make_random_option()
         option_dict.update(tmp_dict)
 
-        # benchmarks option
+        # Benchmarks option
         benchmark_option = set_benchmark()
 
         # save config
