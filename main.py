@@ -98,7 +98,7 @@ def execute_by_random(index : int, tmp_dir : str):
     command += option_list
     option_dict.update(tmp_dict)
 
-    # benchmarks option
+    # Benchmarks option
     benchmark_option = set_benchmark()
     command += benchmark_option
 
