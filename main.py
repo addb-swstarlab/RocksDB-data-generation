@@ -102,7 +102,7 @@ def execute_by_random(index : int, tmp_dir : str):
     benchmark_option = set_benchmark()
     command += benchmark_option
 
-    # save config
+    # Save config
     random_config_filename = f"config{i}.cnf"
     random_config_filename = os.path.join(CONFIG_FILE_PATH, random_config_filename)
     save_option_as_cnf(option_dict, random_config_filename)
