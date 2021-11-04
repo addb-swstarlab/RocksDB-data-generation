@@ -137,7 +137,7 @@ def gen_config(number : int):
         # Benchmarks option
         benchmark_option = set_benchmark()
 
-        # save config
+        # Save config
         random_config_filename = f"config{i}.cnf"
         random_config_filename = os.path.join(CONFIG_FILE_PATH, random_config_filename)
         save_option_as_cnf(option_dict, random_config_filename)
