@@ -1,7 +1,7 @@
 import random
 from configparser import ConfigParser
 
-# List for RocksDB parameters, external and internal metrics.
+# List for RocksDB parameters, external and internal metrics
 KB = 1024
 MB = 1024 * 1024
 
