@@ -162,7 +162,7 @@ if __name__ == "__main__":
     external_file = os.path.join(os.getcwd(), external_file_path)
     internal_file = os.path.join(os.getcwd(), internal_file_path)
     
-    #record_column = [key for key in external_params] + [key for key in outputs]
+    #Record_column = [key for key in external_params] + [key for key in outputs]
     record_column = [key for key in outputs]
 
     ex_result_file = open(external_file, "w")
