@@ -6,8 +6,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--dir', type=str)
 opt = parser.parse_args()
 
-DIR_PATH = f'/jieun/230319-rocksdb-complex-workload/results/{opt.dir}'
-RESULT_PATH = '/jieun/230319-rocksdb-complex-workload/csv'
+DIR_PATH = f'results/{opt.dir}'
+RESULT_PATH = 'csv'
 
 if os.path.exists(RESULT_PATH) is False:
     os.mkdir(RESULT_PATH)
