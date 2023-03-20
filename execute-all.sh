@@ -4,5 +4,4 @@ BENCHMARKS=(fillseq,readrandom fillseq,readwhilewriting fillrandom,readrandom fi
 
 for benchmark in ${BENCHMARKS[@]}; do
   ./default_benchmark.sh $benchmark
-  ./trg-sample-benchmark.sh $benchmark
 done
