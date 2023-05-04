@@ -1,4 +1,7 @@
-# RocksDB
+# RocksDB sample generation
+This repository is aiming at a generation of RocksDB samples to tuning its configuration knobs.
+
+## RocksDB
 RocksDB is a disk based database that can achieve fast data writing performance. 
 Generation valuable RocksDB data is important for RocksDB optimization and analyzation studies. 
 However, generating the useful data is a complex, difficult and time consuming task. 
@@ -7,8 +10,8 @@ Users can also change RocksDB parameters while generating data.
 
 If you want to apply this project to your own database, please remember to change parameter options as well as related files. 
 
-# Requirements
-## How to Install RocksDB and db_bench
+## Requirements
+### How to Install RocksDB and db_bench
 You can install RocksDB and db_bench on here.
 - https://github.com/facebook/rocksdb
 - https://github.com/facebook/rocksdb/wiki/Benchmarking-tools
