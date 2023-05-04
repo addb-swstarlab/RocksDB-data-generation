@@ -17,7 +17,12 @@ You can install RocksDB and db_bench on here.
 - https://github.com/facebook/rocksdb/wiki/Benchmarking-tools
 
 ## Run
-#### Parse explanation
+#### How to Run
+<pre>
+python main.py --wk 0
+</pre>
+
+#### Provided Option
 <pre>
 wk          : workload index 
               type=int
