@@ -15,3 +15,5 @@ If you want to apply this project to your own database, please remember to chang
 You can install RocksDB and db_bench on here.
 - https://github.com/facebook/rocksdb
 - https://github.com/facebook/rocksdb/wiki/Benchmarking-tools
+
+## Run
