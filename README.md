@@ -17,3 +17,14 @@ You can install RocksDB and db_bench on here.
 - https://github.com/facebook/rocksdb/wiki/Benchmarking-tools
 
 ## Run
+#### Parse explanation
+<pre>
+wk          : workload index 
+              type=int
+mode        : configuration option {0: by config file option
+                                    1: by random option
+                                    3: by generated config option}
+              type=int
+num         : number of generated samples
+config_path : config file path
+</pre>
