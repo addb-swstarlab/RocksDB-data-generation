@@ -18,7 +18,7 @@ args = argparser.parse_args()
 IS_RANDOM = args.mode
 NUM = args.num
 CONFIG_FILE_PATH = args.config_path
-BENCH_PATH = "/home/jieun/rocksdb"
+BENCH_PATH = "/rocksdb"
 BP = BenchmarkParams(args.wk)
 
 ###################################### Need to fix #############################################
