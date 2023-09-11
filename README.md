@@ -28,11 +28,6 @@ python main.py --wk 0
 --wk          : workload index 
                 type=int
                 default=0
---mode        : configuration option {0: by config file option
-                                      1: by random option
-                                      2: by generated config option}
-                type=int
-                default=0
 --num         : number of generated samples
                 default=20
 --config_path : config file path
