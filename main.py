@@ -18,9 +18,9 @@ argparser.add_argument('--generate', action='store_true')
 args = argparser.parse_args()
 IS_RANDOM = args.mode
 NUM = args.num
-# CONFIG_FILE_PATH = args.config_path
-BENCH_PATH = "/home/jieun/rocksdb"
-WORKLOAD_INDEX = args.wk
+
+CONFIG_FILE_PATH = args.config_path
+BENCH_PATH = "/rocksdb"
 BP = BenchmarkParams(args.wk)
 GEN_CONFIGS = args.generate
 RESULT_PATH = "/home/jieun/data_generation_rocksdb/results"
