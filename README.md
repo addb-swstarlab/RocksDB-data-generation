@@ -30,6 +30,5 @@ python main.py --wk 0
                 default=0
 --num         : number of generated samples
                 default=20
---config_path : config file path
-                "./conf_tmp/"
+--generate    : generate samples (trigger)
 </pre>
