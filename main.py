@@ -25,13 +25,12 @@ EXTERNAL_FILE_PATH = os.path.join(RESULT_PATH, str(WORKLOAD_INDEX), f"external_r
 INTERNAL_FILE_PATH = os.path.join(RESULT_PATH, str(WORKLOAD_INDEX), f"internal_results_{WORKLOAD_INDEX}.csv")
 RESULT_FILE_PATH = os.path.join(RESULT_PATH, str(WORKLOAD_INDEX), 'result_txt')
 
-###################################### ????????#############################################
 
 # Set value size for specific workload
 def set_value_size():
     key_size = 16
     value_size = int(BP.get_value_size())
-    entry_num = int(BP.get_entry_num()) # 1GB 10GB  ?ъ씠利덈퀎 ?뚯슂?쒓컙 痢≪젙
+    entry_num = int(BP.get_entry_num())
     data_option = f"-key_size={key_size} -value_size={value_size} -num={entry_num} "
     tmp_dict = {"key_size" : key_size, "value_size" : value_size, "num" : entry_num}
     # print(data_option)
