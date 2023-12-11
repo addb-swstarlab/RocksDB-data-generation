@@ -35,6 +35,10 @@ external_params = [
     'memtable_bloom_size_ratio', 
     'compression_ratio',
 ]
+
+# WAF: Write amplification factor
+# SA: Space amplification
+# SAF is not used for it is depended highly on compression related parameters
 outputs = [
     "index",
     'TIME',
