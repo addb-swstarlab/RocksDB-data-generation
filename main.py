@@ -6,6 +6,7 @@ import pandas as pd
 from option import *
 from parsing import *
 from benchmark_params import BenchmarkParams
+from params import (ROCKSDB_PATH, RESULT_PATH)
 
 # Use argparser to get command options
 argparser = argparse.ArgumentParser(description="rocksdb dbbench test program")
@@ -14,21 +15,22 @@ argparser.add_argument('--key', default=16, type=int, help="Define key size on w
 argparser.add_argument('--value', default=1024, type=int, help="Define value size on workloads")
 argparser.add_argument('--num', default=100000, type=int, help="Define number of key/value pairs on workloads")
 argparser.add_argument('--sample_size', required=False, default=10, type=int, help="Define a sample size")
+argparser.add_argument('--workload_options', type=str, help="Define workload options")
+argparser.add_argument('--readwritepercent', default=0, type=int, help="Define workload options of read write percent, if necessary")
 argparser.add_argument('--generate', action='store_true')
 
 args = argparser.parse_args()
-NUM = args.num
-BENCH_PATH = "/home/jieun/rocksdb"
-WORKLOAD_INDEX = args.wk
-BP = BenchmarkParams(args.wk)
-GEN_CONFIGS = args.generate
-RESULT_PATH = "/home/jieun/data_generation_rocksdb/results"
-CONFIG_FILE_PATH = os.path.join(RESULT_PATH, str(WORKLOAD_INDEX), 'configs')
-EXTERNAL_FILE_PATH = os.path.join(RESULT_PATH, str(WORKLOAD_INDEX), f"external_results_{WORKLOAD_INDEX}.csv")
-INTERNAL_FILE_PATH = os.path.join(RESULT_PATH, str(WORKLOAD_INDEX), f"internal_results_{WORKLOAD_INDEX}.csv")
-RESULT_FILE_PATH = os.path.join(RESULT_PATH, str(WORKLOAD_INDEX), 'result_txt')
 
+CONFIG_FILE_PATH = os.path.join(RESULT_PATH, str(args.wk), 'configs')
+EXTERNAL_FILE_PATH = os.path.join(RESULT_PATH, str(args.wk), f"external_results_{args.wk}.csv")
+INTERNAL_FILE_PATH = os.path.join(RESULT_PATH, str(args.wk), f"internal_results_{args.wk}.csv")
+RESULT_FILE_PATH = os.path.join(RESULT_PATH, str(args.wk), 'result_txt')
 
+benchmark_option = f'--benchmarks={args.workload_options},compact,stats --statistics'
+if args.readwritepercent > 0:
+    benchmark_option += r'--readwritepercent{args.readwritepercent}'
+
+# -------------------
 # Set value size for specific workload
 def set_value_size():
     key_size = 16
@@ -63,7 +65,7 @@ def gen_config(number : int, path):
         # benchmarks option
         db_bench_benchmarks = set_benchmark()
 
-        db_bench_cmd = BENCH_PATH + "/db_bench " + db_bench_datas + db_bench_configs + db_bench_benchmarks
+        db_bench_cmd = ROCKSDB_PATH + "/db_bench " + db_bench_datas + db_bench_configs + db_bench_benchmarks
         db_bench_cmds.append(db_bench_cmd)
         
         pd_configs = pd.concat([pd_configs, pd.DataFrame.from_dict([dict_config])])
