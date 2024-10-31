@@ -10,7 +10,10 @@ from benchmark_params import BenchmarkParams
 # Use argparser to get command options
 argparser = argparse.ArgumentParser(description="rocksdb dbbench test program")
 argparser.add_argument('--wk', required=True, default=0, type=int, help="which workload a user wants to test")
-argparser.add_argument('--num', required=False, default=20, type=int, help="how many random option create and test")
+argparser.add_argument('--key', default=16, type=int, help="Define key size on workloads")
+argparser.add_argument('--value', default=1024, type=int, help="Define value size on workloads")
+argparser.add_argument('--num', default=100000, type=int, help="Define number of key/value pairs on workloads")
+argparser.add_argument('--sample_size', required=False, default=10, type=int, help="Define a sample size")
 argparser.add_argument('--generate', action='store_true')
 
 args = argparser.parse_args()
