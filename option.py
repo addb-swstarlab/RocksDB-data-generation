@@ -60,9 +60,9 @@ option = {
     },
     "compaction_style": { #D:0
         "kCompactionStyleLevel" : 0, 
-        "kCompactionStyleUniversal" : 1,
-        "kCompactionStyleFIFO" : 2,
-        "kCompactionStyleNone" : 3
+        # "kCompactionStyleUniversal" : 1,
+        # "kCompactionStyleFIFO" : 2,
+        # "kCompactionStyleNone" : 3
     },
     "level0_file_num_compaction_trigger": [i for i in range(2, 9)], #D:4, B:2 ~ 8
     "level0_slowdown_writes_trigger": [i for i in range(16, 33)], #D:20, B:16 ~ 64
