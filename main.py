@@ -1,12 +1,10 @@
 import os
-import sys
 import argparse
 import pandas as pd
 import configparser
 
 from option import *
 from parsing import *
-from benchmark_params import BenchmarkParams
 from params import (ROCKSDB_DIR_PATH, RESULT_DIR_PATH)
 
 # Use argparser to get command options
@@ -83,10 +81,11 @@ if __name__ == "__main__":
     gen_dir(RESULT_DIR_PATH)
     gen_dir(CONFIG_DIR_PATH)
         
-    if args.generate: # generate rocksdb configurations randomly
+    if args.generate: 
+        ## Generate rocksdb configurations randomly
         db_bench_cmds, pd_configs = gen_config(args.sample_size, CONFIG_DIR_PATH)
     else:
-        # assert False, "to do: convert exist configs to db_bench commands"
+        ## Using generated config files
         db_bench_cmds = convert_conf_to_cmd(args.sample_size, CONFIG_DIR_PATH)
     
     pd_externals = pd.DataFrame()
