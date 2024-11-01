@@ -20,7 +20,8 @@ You can install RocksDB and db_bench on here.
 ## Run
 #### How to Run
 <pre>
-python main.py --wk 29 --key 16 --value 128 --num 5000000 --sample_size 100 --workload_option updaterandom --generate
+python main.py --wk 29 --key 16 --value 128 --num 5000000 \
+  --sample_size 100 --workload_option updaterandom --generate
 </pre>
 
 #### Provided Option
