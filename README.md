@@ -24,7 +24,7 @@ python main.py --wk 29 --key 16 --value 128 --num 5000000 \
   --sample_size 100 --workload_option updaterandom --generate
 </pre>
 
-#### Provided Option
+#### Provided Options
 <pre>
 --wk          : workload index 
                 type=str
