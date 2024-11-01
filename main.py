@@ -70,7 +70,6 @@ def convert_conf_to_cmd(sample_size: int, path: str):
             cmd = " ".join([cmd, f'-{k}={v}'])
         
         cmd = " ".join([cmd, get_benchmark_option()])
-        print(cmd)
         db_bench_cmds.append(cmd)
     
     return db_bench_cmds
@@ -92,17 +91,18 @@ if __name__ == "__main__":
     
     pd_externals = pd.DataFrame()
     pd_internals = pd.DataFrame()
-    for i, dbc in enumerate(db_bench_cmds):
-        result_path = os.path.join(RESULT_FILE_PATH, f'results.txt')
+    for i, bench_cmd in enumerate(db_bench_cmds):
+        os.system(bench_cmd)
         
-        os.system(f"{dbc} > {result_path}")
-        
-        res_external = parsing_external(result_path)
-        res_internal = parsing_internal(result_path)
+        res_external = parsing_external(RESULT_FILE_PATH)
+        res_internal = parsing_internal(RESULT_FILE_PATH)
         
         pd_externals = pd.concat([pd_externals, pd.DataFrame.from_dict([res_external])])
         pd_internals = pd.concat([pd_internals, pd.DataFrame.from_dict([res_internal])])
     
+        pd_externals.to_csv(EXTERNAL_FILE_PATH)
+        pd_internals.to_csv(INTERNAL_FILE_PATH)
+        
     pd_externals = pd_externals.reset_index(drop=True)
     pd_internals = pd_internals.reset_index(drop=True)
     
