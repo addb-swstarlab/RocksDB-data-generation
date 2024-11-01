@@ -20,15 +20,28 @@ You can install RocksDB and db_bench on here.
 ## Run
 #### How to Run
 <pre>
-python main.py --wk 0
+python main.py --wk 29 --key 16 --value 128 --num 5000000 --sample_size 100 --workload_option updaterandom --generate
 </pre>
 
 #### Provided Option
 <pre>
 --wk          : workload index 
-                type=int
+                type=str
                 default=0
---num         : number of generated samples
+--key         : Set a key size of workload
+                type=int
+--value       : Set a value size of workload
+                type=int
+--num         : Set number of key-value pairs
+                type=int
+--sample_size : number of generated samples
                 default=20
---generate    : generate samples (trigger)
+
+--workload_options : Define workload options of db_bench
+                     type=str
+                     example) readrandom
+--readwritepercent : Define read write ratios, if benchmark option includes readrandomwriterandom
+                     type=int
+                     example) 70 (It should be in [0,100]
+--generate         : generate samples (trigger)
 </pre>
